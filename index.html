@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/reset.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
@@ -13,63 +13,66 @@
 </head>
 
 <body>
-    <main>
+    <main><h1>Rock, Paper, Scissors!</h1>
         <div class = 'flex-row'>
             <!-- Quadrant 2 -->
             <section class = 'flex-column quadrant'>
-                <h2>Rules</h2>
-                <p>List of Rules...
+                <h2 id='rules-heading'>Rules</h2>
+                <p>
                     <ul>
-                        <li>a</li>
-                        <li>b</li>
-                        <li>c</li>
-                        <li>d</li>
-                        <li>e</li>
+                        <li>Press Start to begin!</li>
+                        <li>Choose either rock, paper, or scissor then throw your move!</li>
+                        <li>See if you are able to outwit the computer!</li>
+                        <li>If you start to lose too badly you can always reset and try again...</li>
                     </ul>
                 </p>
                 <button id='reset-button'>Reset</button>
                 <button id='start-button'>Start</button>
-                <span>Number of Resets...</span>
+                <span id='reset-count'></span>
             </section>
             <!-- Quadrant 1 -->
-            <section class = 'flex-column quadrant'>
-                <div class = 'flex-column q1-spacing border'>
-                    <span>Pick Your Move</span>
+            <section class = 'flex-column quadrant initial-hidden'>
+                <div class = 'flex-column q1-spacing'>
+                    <h2>Pick Your Move</h2>
                     <div class = 'flex-row'>
-                        <div class='flex-column'>
+                        <div class='flex-column hands'>
                             <label>
-                                <input type='radio' name='select' value='rock' checked>
+                                <input type='radio' name='select' value='Rock' checked>
                                 <img class = 'option-images' src='assets/rock.svg'>
                             </label>
                             <span>Rock</span>
                         </div>
-                        <div class='flex-column'>
+                        <div class='flex-column hands'>
                             <label>
-                                <input type='radio' name='select' value='paper'>
+                                <input type='radio' name='select' value='Paper'>
                                 <img class = 'option-images' src='assets/paper.svg'>
                             </label>
                             <span>Paper</span>
                         </div>
-                        <div  class='flex-column'>
+                        <div  class='flex-column hands'>
                             <label>
-                                <input type='radio' name='select' value='scissor'>
+                                <input type='radio' name='select' value='Scissor'>
                                 <img class = 'option-images' src='assets/scissor.svg'>
                             </label>
                             <span>Scissor</span>
                         </div>
                     </div>
-                    <button>Throw!</button>
+                    <button id='throw-button'>Throw!</button>
                 </div>
-                <div class ='flex-column q1-spacing border'>
-                    <span>Score</span>
+                <div id='score-container' class ='flex-column q1-spacing border'>
+                    <h2>Score</h2>
                     <div class='flex-row'>
                         <div class = 'flex-column individual-score'>
-                            <span>User</span>
-                            <div>5</div>
+                            <h3>User</h3>
+                            <div id="user-score">0</div>
                         </div>
                         <div  class = 'flex-column individual-score'>
-                            <span>Opponent</span>
-                            <div>3</div>
+                            <h3>Computer</h3>
+                            <div id='opponent-score'>0</div>
+                        </div>
+                        <div class = 'flex-column individual-score'>
+                            <h3 class='scoreboard'>Tie</h3>
+                            <div id="tie-score">0</div>
                         </div>
                     </div>
 
@@ -79,16 +82,16 @@
 
         <div class = 'flex-row'>
             <!-- Quadrant 3 -->
-            <section class = 'flex-column quadrant'>
-                <span>User's Throw</span>
-                <img src='assets/rock.svg'>
-                <span>Rock</span>
+            <section class = 'flex-column quadrant initial-hidden bottom-quad'>
+                <h2>User's Throw</h2>
+                <img id='user-throw-img' class = 'thrown-images' src='assets/rock.svg'>
+                <h2 id="user-throw-span" class='throw-span'>Rock</h2>
             </section>
             <!-- Quadrant 4 -->
-            <section class = 'flex-column quadrant'>
-                <span>Opponent's Throw</span>
-                <img src='assets/paper.svg'>
-                <span>Rock</span>
+            <section class = 'flex-column quadrant initial-hidden bottom-quad'>
+                <h2>Computer's Throw</h2>
+                <img id='opponent-throw-img' class = 'thrown-images' src='assets/paper.svg'>
+                <h2 id='opponent-throw-span' class='throw-span'>Rock</h2>
             </section>
         </div>
     </main>

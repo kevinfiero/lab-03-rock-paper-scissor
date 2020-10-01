@@ -1,6 +1,11 @@
 
-body {
+html{
+    font-family: 'Lato', sans-serif;
+    background-color: #ccdbdc;
+}
 
+body {
+    min-width: 650px;
 }
 
 main {
@@ -8,6 +13,39 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+h1{
+    font-weight: 300;
+    font-size: 50px;
+    margin: 20px;
+}
+
+h2{
+    font-weight: 600;
+    font-size: 20px;
+}
+
+button{
+    font-size: 20px;
+}
+
+input[type='radio']{
+    display: none;
+}
+
+input[type='radio']:checked + img{
+    border: 3px solid black;
+}
+
+ul{
+    list-style-type: disc;
+    list-style-position: outside;
+    padding-left: 20px;
+}
+
+li{
+    margin: 2px 0px 2px 0px;
 }
 
 .flex-row{
@@ -40,6 +78,12 @@ main {
     width: 50px;
 }
 
+.thrown-images{
+    visibility: hidden;
+    height: 100px;
+    width: 100px;
+}
+
 .individual-score{
     margin: 10px
 }
@@ -52,6 +96,22 @@ main {
     margin: 10px;
 }
 
+.initial-hidden{
+    visibility: hidden;
+}
+
+.throw-span{
+    visibility: hidden;
+}
+
+.hands{
+    margin: 10px;
+}
+
+.bottom-quad{
+    height:200px;
+}
+
 #reset-button{
     display: none;
     margin: 20px;
@@ -62,10 +122,14 @@ main {
     margin: 20px;
 }
 
-input[type=radio]{
-    display: none;
+#throw-button{
+    margin-top: 20px;
 }
 
-input[type=radio]:checked + img{
-    border: 1px solid black;
+#rules-heading{
+    margin-bottom: 20px;
+}
+
+#score-container{
+    margin-bottom: 25px;
 }
