@@ -87,7 +87,7 @@ function grabSVGString(thrown){
     }
 }
 
-function generateOpponentThrow(){
+export function generateOpponentThrow(){
     let num = Math.floor(Math.random() * 3);
     if (num === 0){
         return 'Rock';
@@ -98,31 +98,31 @@ function generateOpponentThrow(){
     }
 }
 
-function checkResults(user, opponent){
+export function checkResults(user, computer){
     if (
-        (user === 'Rock' && opponent === 'Paper') || 
-        (user === 'Paper' && opponent === 'Scissor') || 
-        (user === 'Scissor' && opponent === 'Rock')){
-        return -1;
+        (user === 'Rock' && computer === 'Paper') || 
+        (user === 'Paper' && computer === 'Scissor') || 
+        (user === 'Scissor' && computer === 'Rock')){
+        return 'lose';
     } else if (
-        (user === 'Paper' && opponent === 'Rock') || 
-        (user === 'Scissor' && opponent === 'Paper') || 
-        (user === 'Rock' && opponent === 'Scissor')){
-        return 1;
+        (user === 'Paper' && computer === 'Rock') || 
+        (user === 'Scissor' && computer === 'Paper') || 
+        (user === 'Rock' && computer === 'Scissor')){
+        return 'win';
     } else {
-        return 0;
+        return 'draw';
     }
 }
 
 
 function changeScore(resultValue){
-    if (resultValue === -1){
+    if (resultValue === 'lose'){
         opponentWin++;
         opponentScoreSpan.textContent = opponentWin;
-    } else if (resultValue === 1){
+    } else if (resultValue === 'win'){
         userWin++;
         userScoreSpan.textContent = userWin;
-    } else if (resultValue === 0){
+    } else if (resultValue === 'draw'){
         tie++;
         tieScoreSpan.textContent = tie;
     }
