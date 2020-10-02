@@ -10,6 +10,10 @@ const userScoreSpan = document.getElementById('user-score');
 const opponentScoreSpan = document.getElementById('opponent-score');
 const tieScoreSpan = document.getElementById('tie-score');
 const resetSpanCount = document.getElementById('reset-count');
+const userH2 = document.getElementById('user');
+const computerH2 = document.getElementById('computer');
+const tieH2 = document.getElementById('tie');
+
 let userWin = 0;
 let opponentWin = 0;
 let tie = 0;
@@ -118,13 +122,51 @@ export function checkResults(user, computer){
 function changeScore(resultValue){
     if (resultValue === 'lose'){
         opponentWin++;
+        userScoreSpan.style.fontWeight = 'normal';
+        userScoreSpan.style.color = 'black';
+        opponentScoreSpan.style.fontWeight = 'bolder';
+        opponentScoreSpan.style.color = '#40916c';
+        tieScoreSpan.style.fontWeight = 'normal';
+        tieScoreSpan.style.color = 'black';
+        userH2.style.fontWeight = 'normal';
+        userH2.style.color = 'black';
+        computerH2.style.fontWeight = 'bolder';
+        computerH2.style.color = '#40916c';
+        tieH2.style.fontWeight = 'normal';
+        tieH2.style.color = 'black';
         opponentScoreSpan.textContent = opponentWin;
+
     } else if (resultValue === 'win'){
         userWin++;
+        userScoreSpan.style.fontWeight = 'bolder';
+        userScoreSpan.style.color = '#40916c';
+        opponentScoreSpan.style.fontWeight = 'normal';
+        opponentScoreSpan.style.color = 'black';
+        tieScoreSpan.style.fontWeight = 'normal';
+        tieScoreSpan.style.color = 'black';
+        userH2.style.fontWeight = 'bolder';
+        userH2.style.color = '#40916c';
+        computerH2.style.fontWeight = 'normal';
+        computerH2.style.color = 'black';
+        tieH2.style.fontWeight = 'normal';
+        tieH2.style.color = 'black';
         userScoreSpan.textContent = userWin;
     } else if (resultValue === 'draw'){
         tie++;
+        userScoreSpan.style.fontWeight = 'normal';
+        userScoreSpan.style.color = 'black';
+        opponentScoreSpan.style.fontWeight = 'normal';
+        opponentScoreSpan.style.color = 'black';
+        tieScoreSpan.style.fontWeight = 'bolder';
+        tieScoreSpan.style.color = '#40916c';
+        userH2.style.fontWeight = 'normal';
+        userH2.style.color = 'black';
+        computerH2.style.fontWeight = 'normal';
+        computerH2.style.color = 'black';
+        tieH2.style.fontWeight = 'bolder';
+        tieH2.style.color = '#40916c';
         tieScoreSpan.textContent = tie;
+        
     }
     return;
 }

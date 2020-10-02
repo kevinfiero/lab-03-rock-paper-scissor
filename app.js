@@ -1,5 +1,6 @@
 import { startGame, resetGame, throwAction } from './utils.js';
 
+
 const startButton = document.getElementById('start-button');
 const resetButton = document.getElementById('reset-button');
 const throwButton = document.getElementById('throw-button');
